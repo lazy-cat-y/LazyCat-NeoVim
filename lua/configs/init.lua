@@ -35,7 +35,6 @@ local load_configs = function()
     require("configs.colorscheme")
     require("configs.alpha")
     require("configs.whichkey")
-    vim.cmd("TSBufToggle highlight")
 end
 
 load_configs()
