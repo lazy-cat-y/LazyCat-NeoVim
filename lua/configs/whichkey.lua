@@ -88,8 +88,9 @@ local mappings = {
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
     ["w"] = { "<cmd>w!<CR>", "Save" },
     ["q"] = { "<cmd>q!<CR>", "Quit" },
-    ["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
+    ["c"] = { "<cmd>bd<CR>", "Close Buffer" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
+    ["o"] = { "<cmd>SymbolsOutline<CR>", "Symbols Outline" },
     ["H"] = { "<cmd>TSBufToggle highlight<CR>", "treesitter highlight" },
     ["f"] = {
         "<cmd>Telescope find_files<cr>",

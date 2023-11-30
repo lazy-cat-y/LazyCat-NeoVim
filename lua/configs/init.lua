@@ -35,6 +35,7 @@ local load_configs = function()
     require("configs.colorscheme")
     require("configs.alpha")
     require("configs.whichkey")
+    require("configs.symbols-outline")
 end
 
 load_configs()
