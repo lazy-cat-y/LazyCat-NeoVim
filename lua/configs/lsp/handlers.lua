@@ -2,17 +2,6 @@ local M = {}
 
 -- TODO: backfill this to template
 M.setup = function()
-    local signs = {
-        { name = "DiagnosticSignError", text = "", line = "ErrorLine" },
-        { name = "DiagnosticSignWarn", text = "", line = "WarningLine" },
-        { name = "DiagnosticSignHint", text = "", line = "InfoLine" },
-        { name = "DiagnosticSignInfo", text = "", line = "HintLine" },
-    }
-
-    for _, sign in ipairs(signs) do
-        vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name, linehl = sign.line })
-    end
-
     local config = {
         virtual_text = true,
         -- show signs

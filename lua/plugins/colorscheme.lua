@@ -1,3 +1,3 @@
 return {
-    "sainnhe/everforest"
+    "neanias/everforest-nvim",
 }
