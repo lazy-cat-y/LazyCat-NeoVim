@@ -170,7 +170,7 @@ ins_left {
         return msg
     end,
     icon = ' LSP:',
-    color = { fg = colors.fg, gui = 'bold' },
+    color = { fg = colors.cyan, gui = 'bold' },
 }
 
 
