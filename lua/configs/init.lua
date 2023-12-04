@@ -31,6 +31,8 @@ local load_configs = function()
     require("configs.autopairs")
     require("configs.terminal")
     require("configs.project")
+    require("configs.bufferline")
+    require("configs.lualine")
 
     require("configs.colorscheme")
     require("configs.alpha")
