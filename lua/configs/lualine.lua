@@ -4,17 +4,9 @@ if not status_ok then
 end
 
 local colors = {
-    bg       = '#2d353b',
-    fg       = '#d3c6aa',
-    yellow   = '#dbbc7f',
-    cyan     = '#83c092',
-    darkblue = '#081633',
-    green    = '#a7c080',
-    orange   = '#e69875',
-    violet   = '#a9a1e1',
-    magenta  = '#c678dd',
-    blue     = '#7fbbb3',
-    red      = '#e67e80',
+    background = require("configs.utils.colors").get("background", true),
+    fg = require("configs.utils.colors").get("fontground", true),
+    base = require("configs.utils.colors").get("base", true)
 }
 
 local conditions = {
@@ -40,9 +32,10 @@ local config = {
             -- We are going to use lualine_c an lualine_x as left and
             -- right section. Both are highlighted by c theme .  So we
             -- are just setting default looks o statusline
-            normal = { c = { fg = colors.fg, bg = colors.bg } },
-            inactive = { c = { fg = colors.fg, bg = colors.bg } },
+            normal = { c = { fg = colors.fg.fg0, bg = colors.background.bg0 } },
+            inactive = { c = { fg = colors.fg.fg0, bg = colors.background.bg0 } },
         },
+        disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
     },
     sections = {
         -- these are to remove the defaults
@@ -79,7 +72,7 @@ ins_left({
     function()
         return '▊'
     end,
-    color = { fg = colors.blue },
+    color = { fg = colors.base.blue },
     padding = { left = 0, right = 1 }
 })
 
@@ -91,26 +84,26 @@ ins_left({
 
     color = function()
         local mode_color = {
-            n = colors.green,
-            i = colors.red,
-            v = colors.blue,
-            [''] = colors.blue,
-            V = colors.blue,
-            c = colors.magenta,
-            no = colors.green,
-            s = colors.orange,
-            S = colors.orange,
-            [''] = colors.orange,
-            ic = colors.yellow,
-            R = colors.violet,
-            Rv = colors.violet,
-            cv = colors.red,
-            ce = colors.red,
-            r = colors.cyan,
-            rm = colors.cyan,
-            ['r?'] = colors.cyan,
-            ['!'] = colors.red,
-            t = colors.red,
+            n = colors.base.green,
+            i = colors.base.red,
+            v = colors.base.blue,
+            [''] = colors.base.blue,
+            V = colors.base.blue,
+            c = colors.base.magenta,
+            no = colors.base.green,
+            s = colors.base.orange,
+            S = colors.base.orange,
+            [''] = colors.base.orange,
+            ic = colors.base.yellow,
+            R = colors.base.violet,
+            Rv = colors.base.violet,
+            cv = colors.base.red,
+            ce = colors.base.red,
+            r = colors.base.cyan,
+            rm = colors.base.cyan,
+            ['r?'] = colors.base.cyan,
+            ['!'] = colors.base.red,
+            t = colors.base.red,
         }
         return { fg = mode_color[vim.fn.mode()] }
     end,
@@ -126,21 +119,21 @@ ins_left {
 ins_left {
     'filename',
     cond = conditions.buffer_not_empty,
-    color = { fg = colors.magenta, gui = 'bold' },
+    color = { fg = colors.base.magenta, gui = 'bold' },
 }
 
 ins_left { 'location' }
 
-ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
+ins_left { 'progress', color = { fg = colors.fg.fg0, gui = 'bold' } }
 
 ins_left {
     'diagnostics',
     sources = { 'nvim_diagnostic' },
     symbols = { error = '󰅚 ', warn = '󰀪 ', info = ' ' },
     diagnostics_color = {
-        color_error = { fg = colors.red },
-        color_warn = { fg = colors.yellow },
-        color_info = { fg = colors.cyan },
+        color_error = { fg = colors.base.red },
+        color_warn = { fg = colors.base.yellow },
+        color_info = { fg = colors.base.cyan },
     },
 }
 
@@ -170,7 +163,7 @@ ins_left {
         return msg
     end,
     icon = ' LSP:',
-    color = { fg = colors.cyan, gui = 'bold' },
+    color = { fg = colors.base.cyan, gui = 'bold' },
 }
 
 
@@ -178,20 +171,20 @@ ins_right {
     'o:encoding',       -- option component same as &encoding in viml
     fmt = string.upper, -- I'm not sure why it's upper case either ;)
     cond = conditions.hide_in_width,
-    color = { fg = colors.green, gui = 'bold' },
+    color = { fg = colors.base.green, gui = 'bold' },
 }
 
 ins_right {
     'fileformat',
     fmt = string.upper,
     icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
-    color = { fg = colors.green, gui = 'bold' },
+    color = { fg = colors.base.green, gui = 'bold' },
 }
 
 ins_right {
     'branch',
     icon = '',
-    color = { fg = colors.violet, gui = 'bold' },
+    color = { fg = colors.base.violet, gui = 'bold' },
 }
 
 ins_right {
@@ -199,9 +192,9 @@ ins_right {
     -- Is it me or the symbol for modified us really weird
     symbols = { added = ' ', modified = ' ', removed = ' ' },
     diff_color = {
-        added = { fg = colors.green },
-        modified = { fg = colors.orange },
-        removed = { fg = colors.red },
+        added = { fg = colors.base.green },
+        modified = { fg = colors.base.orange },
+        removed = { fg = colors.base.red },
     },
     cond = conditions.hide_in_width,
 }
@@ -210,7 +203,7 @@ ins_right {
     function()
         return '▊'
     end,
-    color = { fg = colors.blue },
+    color = { fg = colors.base.blue },
     padding = { left = 1, right = 0 },
 }
 

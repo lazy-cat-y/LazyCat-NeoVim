@@ -3,6 +3,17 @@ if not status_ok then
     return
 end
 
+local status_ok_color, color = pcall(require, "configs.utils.colors")
+if not status_ok_color then
+    return
+end
+
+local colors = {
+    background = color.get("background", true),
+    fontground = color.get("fontground", true),
+    base = color.get("base", true),
+}
+
 local function custom_areas_right()
     local result = {}
     local seve = vim.diagnostic.severity
@@ -12,19 +23,19 @@ local function custom_areas_right()
     local hint = #vim.diagnostic.get(0, { severity = seve.HINT })
 
     if error ~= 0 then
-        table.insert(result, { text = "  " .. error, fg = "#EC5241" })
+        table.insert(result, { text = "  " .. error, fg = colors.base.red, bg = colors.background.bg1 })
     end
 
     if warning ~= 0 then
-        table.insert(result, { text = "  " .. warning, fg = "#EFB839" })
+        table.insert(result, { text = "  " .. warning, fg = colors.base.yellow, bg = colors.background.bg1 })
     end
 
     if hint ~= 0 then
-        table.insert(result, { text = "  " .. hint, fg = "#A3BA5E" })
+        table.insert(result, { text = "  " .. hint, fg = colors.base.orange, bg = colors.background.bg1 })
     end
 
     if info ~= 0 then
-        table.insert(result, { text = "  " .. info, fg = "#7EA9A7" })
+        table.insert(result, { text = "  " .. info, fg = colors.base.blue, bg = colors.background.bg1 })
     end
     return result
 end
@@ -74,11 +85,11 @@ bufferline.setup({
                 bg = { attribute = "bg", highlight = "TabLine" },
             },
 
-            -- buffer_selected = {
-            --   fg = {attribute='fg',highlight='#ff0000'},
-            --   bg = {attribute='bg',highlight='#0000ff'},
-            --   gui = 'none'
-            --   },
+            buffer_selected = {
+                fg = { attribute = 'fg', highlight = '#ff0000' },
+                bg = { attribute = 'bg', highlight = '#0000ff' },
+                gui = 'none'
+            },
             buffer_visible = {
                 fg = { attribute = "fg", highlight = "TabLine" },
                 bg = { attribute = "bg", highlight = "TabLine" },
@@ -92,10 +103,10 @@ bufferline.setup({
                 fg = { attribute = "fg", highlight = "TabLine" },
                 bg = { attribute = "bg", highlight = "TabLine" },
             },
-            -- close_button_selected = {
-            --   fg = {attribute='fg',highlight='TabLineSel'},
-            --   bg ={attribute='bg',highlight='TabLineSel'}
-            --   },
+            close_button_selected = {
+                fg = { attribute = 'fg', highlight = 'TabLineSel' },
+                bg = { attribute = 'bg', highlight = 'TabLineSel' }
+            },
 
             tab_selected = {
                 fg = { attribute = "fg", highlight = "Normal" },
