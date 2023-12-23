@@ -98,6 +98,7 @@ local mappings = {
     },
     ["F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
     ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
+    ["u"] = { "<cmd>TSUpdate all<cr>", "Treesitter"},
 
     p = {
         name = "Packer",
@@ -198,7 +199,7 @@ local vopts = {
 }
 -- toggle_linewise_op(vim.fn.visualmode())
 local vmappings = {
-    ["/"] = { "<ESC><CMD>lua require(\"Comment.api\").toggle.linewires(vim.fn.visualmode())<CR>", "Comment" },
+    ["/"] = { "<ESC><CMD>lua require(\"Comment.api\").toggle.linewise(vim.fn.visualmode())<CR>", "Comment" },
     l = {
         name = "Lsp",
         a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
