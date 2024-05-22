@@ -73,3 +73,7 @@ bind('n', '<leader>e', vscode_action("workbench.action.toggleSidebarVisibility")
 -- buffers
 bind('n', '<leader>bp', vscode_action("workbench.action.previousEditorInGroup"), opts)
 bind('n', '<leader>bn', vscode_action("workbench.action.nextEditorInGroup"), opts)
+
+-- Diagnostic
+bind("n", "]d", vscode_action("editor.action.marker.next"), { desc = "Next Diagnostic" })
+bind("n", "[d", vscode_action("editor.action.marker.prev"), { desc = "Prev Diagnostic" })
