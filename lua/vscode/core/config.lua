@@ -5,9 +5,6 @@ local options = {
 
     backspace = "indent,eol,start",
 
-    ingorecase = true,
-    smartcase = true,
-
     relativenumber = true,
 
     clipboard = "unnamedplus"
