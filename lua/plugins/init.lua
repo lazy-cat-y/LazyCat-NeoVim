@@ -79,17 +79,29 @@ return {
         'simrat39/symbols-outline.nvim'
     },
     {
-        "nvim-telescope/telescope.nvim"
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.5',
+        -- or                              , branch = '0.1.x',
+        dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
     {
         "akinsho/toggleterm.nvim",
     },
     {
-        "nvim-lua/popup.nvim", -- An implementation of the Popup API from vim in Neovim
+        "nvim-lua/popup.nvim",   -- An implementation of the Popup API from vim in Neovim
         "nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
     },
     {
         "folke/which-key.nvim",
+    },
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        build = "cd app && yarn install",
+        init = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+        ft = { "markdown" },
     },
 }
