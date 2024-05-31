@@ -1,6 +1,6 @@
 if vim.g.vscode then
     -- vim.cmd [[set runtimepath^=~/.config/nvim/lazy.nvim]]
-    require("vscode")
+    require("lazycat-vscode")
 else
     require("core")
 end
