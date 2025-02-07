@@ -1,2 +1,2 @@
 require("lazycat-vscode.core")
-require("vscode.plugins")
+require("vscode-plugins.plugins")

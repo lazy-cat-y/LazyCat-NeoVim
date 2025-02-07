@@ -77,3 +77,14 @@ bind('n', '<leader>bn', vscode_action("workbench.action.nextEditorInGroup"), opt
 -- Diagnostic
 bind("n", "]d", vscode_action("editor.action.marker.next"), { desc = "Next Diagnostic" })
 bind("n", "[d", vscode_action("editor.action.marker.prev"), { desc = "Prev Diagnostic" })
+bind("n", 'gd', vscode_action("editor.action.revealDefinition"), {desc = "Goto Definition"})
+bind("n", 'gi', vscode_action("editor.action.goToImplementation"), {desc = "Goto Implementation"})
+bind("n", 'gb', vscode_action("workbench.action.navigateBack"), {desc = "Go Back"})
+
+-- activity bar
+bind("n", "<leader>x", vscode_action("workbench.action.focusActivityBar"), { desc = "Focus Activity Bar" })
+
+-- rename
+bind("n", "<leader>rn", vscode_action("editor.action.rename"), { desc = "Focus Activity Bar" })
+bind("x", "<leader>rn", vscode_action("editor.action.rename"), { desc = "Focus Activity Bar" })
+
