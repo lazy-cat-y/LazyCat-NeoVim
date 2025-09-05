@@ -213,20 +213,20 @@ end
 --#regions
 
 local normal_config = {
-    { "<leader>/", "<cmd>lua require(\"Comment.api\").toggle.linewise.current()<CR>",                                                desc = "Comment",         mode = "n" },
-    { "<leader>a", "<cmd>Alpha<cr>",                                                                                                 desc = "Alpha",           mode = "n" },
-    { "<leader>b", "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", desc = "Buffers",         mode = "n" },
-    { "<leader>e", "<cmd>NvimTreeToggle<cr>",                                                                                        desc = "Explorer",        mode = "n" },
-    { "<leader>w", "<cmd>w!<CR>",                                                                                                    desc = "Save",            mode = "n" },
-    { "<leader>q", "<cmd>q!<CR>",                                                                                                    desc = "Quit",            mode = "n" },
-    { "<leader>c", "<cmd>bd<CR>",                                                                                                    desc = "Close buffer",    mode = "n" },
-    { "<leader>h", "<cmd>nohlsearch<CR>",                                                                                            desc = "No Highlight",    mode = "n" },
-    { "<leader>O", "<cmd>SymbolsOutline<CR>",                                                                                        desc = "Symbols Outline", mode = "n" },
+    { "<leader>/", "<cmd>lua require(\"Comment.api\").toggle.linewise.current()<CR>",                                                desc = "Comment",      mode = "n" },
+    { "<leader>a", "<cmd>Alpha<cr>",                                                                                                 desc = "Alpha",        mode = "n" },
+    { "<leader>b", "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", desc = "Buffers",      mode = "n" },
+    { "<leader>e", "<cmd>NvimTreeToggle<cr>",                                                                                        desc = "Explorer",     mode = "n" },
+    { "<leader>w", "<cmd>w!<CR>",                                                                                                    desc = "Save",         mode = "n" },
+    { "<leader>q", "<cmd>q!<CR>",                                                                                                    desc = "Quit",         mode = "n" },
+    { "<leader>c", "<cmd>bd<CR>",                                                                                                    desc = "Close buffer", mode = "n" },
+    { "<leader>h", "<cmd>nohlsearch<CR>",                                                                                            desc = "No Highlight", mode = "n" },
+    { "<leader>O", "<cmd>Outline<CR>",                                                                                               desc = "Outline",      mode = "n" },
     -- {"<leader>H", "<cmd>TSBufToggle highlight<CR>", desc="treesitter highlight", mode="n"},
-    { "<leader>f", "<cmd>Telescope find_files<cr>",                                                                                  desc = "Find files",      mode = "n" },
-    { "<leader>F", "<cmd>Telescope live_grep<cr>",                                                                                   desc = "Find Text",       mode = "n" },
-    { "<leader>P", "<cmd>Telescope projects<cr>",                                                                                    desc = "Projects",        mode = "n" },
-    { "<leader>u", "<cmd>TSUpdate all<cr>",                                                                                          desc = "Treesitter",      mode = "n" }
+    { "<leader>f", "<cmd>Telescope find_files<cr>",                                                                                  desc = "Find files",   mode = "n" },
+    { "<leader>F", "<cmd>Telescope live_grep<cr>",                                                                                   desc = "Find Text",    mode = "n" },
+    { "<leader>P", "<cmd>Telescope projects<cr>",                                                                                    desc = "Projects",     mode = "n" },
+    { "<leader>u", "<cmd>TSUpdate all<cr>",                                                                                          desc = "Treesitter",   mode = "n" }
 }
 
 local lsp_config = {

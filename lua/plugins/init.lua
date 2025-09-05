@@ -34,10 +34,25 @@ return {
         opts = {}
     },
     {
-        "neovim/nvim-lspconfig",                    -- enable LSP
-        dependencies = { "williamboman/mason.nvim", -- simple to use language server installer
-            "williamboman/mason-lspconfig.nvim",    -- simple to use language server installer
-            'jose-elias-alvarez/null-ls.nvim', }    -- LSP diagnostics and code actions
+        "mason-org/mason.nvim",
+        opts = {}
+    },
+    {
+        "mason-org/mason-lspconfig.nvim",
+        opts = {},
+        dependencies = {
+            { "mason-org/mason.nvim", opts = {} },
+            "neovim/nvim-lspconfig",
+        },
+    },
+    {
+        "nvimtools/none-ls.nvim",
+    },
+    {
+        "neovim/nvim-lspconfig", -- enable LSP
+        dependencies = { "mason-org/mason.nvim",
+            "mason-org/mason-lspconfig.nvim"
+        }
     },
     {
         'nvimdev/lspsaga.nvim',
@@ -76,7 +91,13 @@ return {
         "ahmedkhalf/project.nvim",
     },
     {
-        'simrat39/symbols-outline.nvim'
+        "hedyhli/outline.nvim",
+        lazy = true,
+        cmd = { "Outline", "OutlineOpen" },
+        opt = {},
+        config = function(_, opts)
+            require("outline").setup(opts)
+        end,
     },
     {
         'nvim-telescope/telescope.nvim',
