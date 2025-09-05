@@ -4,7 +4,7 @@ An IDE layer for Neovim with some defaults. Completely free and community driven
 
 ## Required
 ```
-Neovim >= 8.0
+Neovim >= 0.11.0
 git
 ```
 
