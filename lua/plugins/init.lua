@@ -46,14 +46,12 @@ return {
         },
     },
     {
-        "nvimtools/none-ls.nvim",
+        "neovim/nvim-lspconfig", -- enable LSP
     },
     {
-        "neovim/nvim-lspconfig", -- enable LSP
-        dependencies = { "mason-org/mason.nvim",
-            "mason-org/mason-lspconfig.nvim"
-        }
+        "nvimtools/none-ls.nvim",
     },
+
     {
         'nvimdev/lspsaga.nvim',
         dependencies = {
@@ -163,5 +161,9 @@ return {
                 -- Configuration here, or leave empty to use defaults
             })
         end
+    },
+    {
+        "karb94/neoscroll.nvim",
+        opts = {},
     }
 }
