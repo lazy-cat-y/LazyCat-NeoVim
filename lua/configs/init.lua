@@ -26,7 +26,7 @@ local load_configs = function()
 
     require("configs.colorscheme")
     require("configs.cmp-config")
-    -- require("configs.lsp")
+    require("configs.lsp")
     require("configs.telescope")
     require("configs.autopairs")
     require("configs.terminal")

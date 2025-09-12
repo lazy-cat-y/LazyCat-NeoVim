@@ -23,6 +23,7 @@ local normal_config = {
 local lsp_config = {
     { "<leader>l", group = "Lsp", icon = "" },
     { "<leader>la", "<cmd>Lspsaga code_action<cr>", desc = "Code Action", mode = "n" },
+    { "<leader>le", "<cmd>lua vim.diagnostic.setloclist()<cr>", desc = "Show diagnostics", mode = "n" },
     { "<leader>ld", "<cmd>Telescope lsp_document_diagnostics<cr>", desc = "Document Diagnostics", mode = "n" },
     { "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", desc = "Code Format", mode = "n" },
     { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info", mode = "n" },

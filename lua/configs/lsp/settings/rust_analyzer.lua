@@ -1,17 +1,17 @@
 return {
     settings = {
-        ["rust-analyzer"] = {
+        ['rust-analyzer'] = {
             inlayHints = {
-                enable = true,
-                typeHints = { enable = true },
-                parameterHints = { enable = true },
-                chainingHints = { enable = true },
                 bindingModeHints = { enable = true },
-                lifetimeElisionHints = { enable = "always", useParameterNames = true },
+                chainingHints = { enable = true },
                 closureReturnTypeHints = { enable = "always" },
-                reborrowHints = { enable = "always" },
+                lifetimeElisionHints = { enable = "always", useParameterNames = true },
                 implicitDrops = { enable = true },
+                parameterHints = { enable = true },
+                typeHints = { enable = true },
+                enable = true,
             },
         },
+
     },
 }
