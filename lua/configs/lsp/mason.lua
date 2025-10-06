@@ -25,19 +25,22 @@ require("mason-lspconfig").setup({
     automatic_installation = true,
 })
 
-vim.api.nvim_create_autocmd("LspProgress", {
-    callback = function(ev)
-        local client = vim.lsp.get_client_by_id(ev.data.client_id)
-        if client and client.server_capabilities and client.server_capabilities.inlayHintProvider and client.server_capabilities.inlayHintProvider.resolveProvider then
-            local v = ev.data.params.value
-            if v.kind == "end" then
-                vim.schedule(function()
-                    vim.lsp.inlay_hint.enable(true, { bufnr = 0 })
-                end)
-            end
-        end
-    end,
-})
+-- vim.api.nvim_create_autocmd("LspProgress", {
+--     callback = function(ev)
+--         local client = vim.lsp.get_client_by_id(ev.data.client_id)
+--         -- if client or (client and client.name ~= 'rust_analyzer') then
+--         --     return
+--         -- end
+--         if client and client.server_capabilities and client.server_capabilities.inlayHintProvider then
+--             local v = ev.data.params.value
+--             if v.kind == "end" then
+--                 vim.schedule(function()
+--                     vim.lsp.inlay_hint.enable(true, { bufnr = 0 })
+--                 end)
+--             end
+--         end
+--     end,
+-- })
 
 vim.lsp.handlers['client/registerCapability'] = (function(overridden)
     return function(err, res, ctx)

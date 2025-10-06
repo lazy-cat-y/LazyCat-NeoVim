@@ -1,15 +1,15 @@
 local util = require("lspconfig.util")
 
 return {
-  single_file_support = false,
-
-  root_dir = util.root_pattern(
-    "compile_commands.json",
-    "compile_flags.txt",
-    "CMakeLists.txt",
-    ".git"
-  ),
-
-  cmd = { "clangd", "--background-index", "--clang-tidy", "--header-insertion=never" },
+    capabilities = {
+        offsetEncoding = { "utf-8", "utf-16" },
+        textDocument = {
+            completion = {
+                editsNearCursor = true
+            }
+        }
+    },
+    root_markers = {
+        ".clangd", ".clang-tidy", ".clang-format", "compile_commands.json", "compile_flags.txt", "configure.ac", ".git"
+    }
 }
-

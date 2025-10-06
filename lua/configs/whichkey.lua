@@ -28,14 +28,13 @@ local lsp_config = {
     { "<leader>lf", "<cmd>lua vim.lsp.buf.format()<cr>", desc = "Code Format", mode = "n" },
     { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info", mode = "n" },
     { "<leader>lI", "<cmd>LspInstallInfo<cr>", desc = "Installer Info", mode = "n" },
-    { "<leader>lj", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", desc = "Next Diagnostic", mode = "n" },
-    { "<leader>lk", "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", desc = "Prev Diagnostic", mode = "n" },
     { "<leader>ll", "<cmd>lua vim.lsp.codelens.run()<cr>", desc = "CodeLens Action", mode = "n" },
     { "<leader>lq", "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", desc = "Quickfix", mode = "n" },
     { "<leader>lr", "<cmd>Lspsaga rename<cr>", desc = "Rename", mode = "n" },
     { "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document Symbols", mode = "n" },
     { "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols", mode = "n" },
     { "<leader>lw", "<cmd>Telescope lsp_workspace_diagnostics<cr>", desc = "Workspace Diagnostics", mode = "n" },
+    { "<leader>lh", "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })<cr>", desc = "Toggle Inlay Hints", mode = "n" }
 }
 
 local packer_config = {
@@ -82,6 +81,7 @@ local terminal_config = {
     { "<leader>th", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "Horizontal", mode = "n" },
     { "<leader>tv", "<cmd>ToggleTerm size=80 direction=vertical<cr>",   desc = "Vertical",   mode = "n" },
 }
+
 
 which_key.add(normal_config)
 which_key.add(lsp_config)

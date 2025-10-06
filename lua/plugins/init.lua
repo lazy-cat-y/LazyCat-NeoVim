@@ -18,9 +18,18 @@ return {
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-nvim-lua", },
     },
+    -- {
+    --     'saghen/blink.cmp',
+    --     dependencies = { 'rafamadriz/friendly-snippets' },
+    --     version = '1.*',
+    --     opts = {
+    --     }
+    --
+    -- },
     {
         "neanias/everforest-nvim",
     },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     {
         'numToStr/Comment.nvim',
         lazy = false,

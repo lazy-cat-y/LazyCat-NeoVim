@@ -83,11 +83,30 @@ local function lsp_keymaps(bufnr)
     vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
+local function lsp_keymaps()
+    local opts = { silent = true, noremap = true }
+
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+    vim.keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts)
+    vim.keymap.set("n", "gh", "<cmd>Lspsaga finder<CR>", opts)
+    vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+    vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+
+    vim.keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+    vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
+    vim.keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+    vim.keymap.set("n", "<leader>u", vim.diagnostic.setloclist, opts)
+end
+
+lsp_keymaps()
+
 M.on_attach = function(client, bufnr)
     if client.name == "tsserver" then
         client.server_capabilities.documentFormattingProvider = false
     end
-    lsp_keymaps(bufnr)
+    -- lsp_keymaps(bufnr)
     lsp_highlight_document(client)
 end
 

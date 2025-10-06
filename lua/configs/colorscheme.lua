@@ -17,32 +17,42 @@ everforest.setup({
     on_highlights = highlights,
 })
 
-vim.cmd("colorscheme everforest")
+local status_catppuccin, catppuccin = pcall(require, "catppuccin")
+
+if not status_catppuccin then
+    return
+end
+
+catppuccin.setup({
+    transparent_background = true,
+})
+
+vim.cmd("colorscheme catppuccin-mocha")
 
 local diagnostic_config = {
-signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = "",
-      [vim.diagnostic.severity.WARN]  = "",
-      [vim.diagnostic.severity.INFO]  = "",
-      [vim.diagnostic.severity.HINT]  = "",
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN]  = "",
+            [vim.diagnostic.severity.INFO]  = "",
+            [vim.diagnostic.severity.HINT]  = "",
+        },
+        numhl = {
+            [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+            [vim.diagnostic.severity.WARN]  = "DiagnosticSignWarn",
+            [vim.diagnostic.severity.INFO]  = "DiagnosticSignInfo",
+            [vim.diagnostic.severity.HINT]  = "DiagnosticSignHint",
+        },
+        linehl = {
+            [vim.diagnostic.severity.ERROR] = "ErrorLine",
+            [vim.diagnostic.severity.WARN]  = "WarningLine",
+            [vim.diagnostic.severity.INFO]  = "InfoLine",
+            [vim.diagnostic.severity.HINT]  = "HintLine",
+        },
     },
-    numhl = {
-      [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
-      [vim.diagnostic.severity.WARN]  = "DiagnosticSignWarn",
-      [vim.diagnostic.severity.INFO]  = "DiagnosticSignInfo",
-      [vim.diagnostic.severity.HINT]  = "DiagnosticSignHint",
-    },
-    linehl = {
-      [vim.diagnostic.severity.ERROR] = "ErrorLine",
-      [vim.diagnostic.severity.WARN]  = "WarningLine",
-      [vim.diagnostic.severity.INFO]  = "InfoLine",
-      [vim.diagnostic.severity.HINT]  = "HintLine",
-    },
-  },
-  virtual_text = true,
-  underline = true,
-  update_in_insert = false,
+    virtual_text = true,
+    underline = true,
+    update_in_insert = false,
 }
 
 vim.diagnostic.config(diagnostic_config)
