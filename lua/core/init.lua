@@ -14,7 +14,6 @@ local function load_core()
     require("core.options")
     require("core.keymaps")
     require("core.lazy")
-    require("configs")
 end
 
 load_core()
