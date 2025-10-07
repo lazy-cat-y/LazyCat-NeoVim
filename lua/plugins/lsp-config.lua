@@ -117,8 +117,6 @@ return {
                         return
                     end
 
-                    vim.lsp.document_color.enable(true, bufnr, { style = "virtual" })
-
                     if client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
                         local under_cursor_highlights_group = vim.api.nvim_create_augroup("xue/cursor_highlights",
                             { clear = false })
