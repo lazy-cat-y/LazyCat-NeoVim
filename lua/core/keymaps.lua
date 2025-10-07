@@ -3,7 +3,7 @@ local map_cr = bind.map_cr
 local map_cu = bind.map_cu
 local map_cmd = bind.map_cmd
 
-local core_map = {
+core_map = {
     ["n|Y"] = map_cmd("y$"):with_desc("edit: Yank text to EOL"),
     ["n|D"] = map_cmd("d$"):with_desc("edit: Delete text to EOL"),
     ["n|n"] = map_cmd("nzzzv"):with_noremap():with_desc("edit: Next search result"),
