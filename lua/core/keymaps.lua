@@ -9,8 +9,15 @@ core_map = {
     ["n|n"] = map_cmd("nzzzv"):with_noremap():with_desc("edit: Next search result"),
     ["n|N"] = map_cmd("Nzzzv"):with_noremap():with_desc("edit: Prev search result"),
     ["n|J"] = map_cmd("mzJ`z"):with_noremap():with_desc("edit: Join next line"),
+    ["n|<C-h>"] = map_cmd("<C-w>h"):with_noremap():with_desc("window: Focus left"),
+    ["n|<C-l>"] = map_cmd("<C-w>l"):with_noremap():with_desc("window: Focus right"),
+    ["n|<C-j>"] = map_cmd("<C-w>j"):with_noremap():with_desc("window: Focus down"),
+    ["n|<C-k>"] = map_cmd("<C-w>k"):with_noremap():with_desc("window: Focus up"),
 
     ["i|jk"] = map_cmd("<Esc>"):with_desc("edit: Quit insert mode"),
+
+    ["v|J"] = map_cmd(":m '>+1<CR>gv=gv"):with_desc("edit: Move this line down"),
+    ["v|K"] = map_cmd(":m '<-2<CR>gv=gv"):with_desc("edit: Move this line up"),
 }
 
 bind.nvim_load_mapping(core_map)
