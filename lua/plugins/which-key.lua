@@ -187,6 +187,13 @@ return {
                 },
                 {
                     "<leader>lr",
+                    "<cmd>lua vim.lsp.buf.rename()<cr>",
+                    desc = "Rename",
+                    icon = { icon = "󰑕", color = "cyan" },
+                    mode = "n",
+                },
+                {
+                    "<leader>lR",
                     "<cmd>FzfLua lsp_references<cr>",
                     desc = "References",
                     icon = { icon = "󰌹", color = "cyan" },
