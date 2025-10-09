@@ -310,10 +310,43 @@ return {
                 },
             }
 
+            local buffer_config = {
+                { "<leader>b", group = "Buffers" },
+                {
+                    "<leader>bc",
+                    "<cmd>bd!<cr>",
+                    desc = "Close buffer",
+                    icon = { icon = "󰅖", color = "red" },
+                    mode = "n",
+                },
+                {
+                    "<leader>bn",
+                    "<cmd>bn<cr>",
+                    desc = "Next buffer",
+                    icon = { icon = "󰓩", color = "green" },
+                    mode = "n",
+                },
+                {
+                    "<leader>bp",
+                    "<cmd>bp<cr>",
+                    desc = "Previous buffer",
+                    icon = { icon = "󰓩", color = "green" },
+                    mode = "n",
+                },
+                {
+                    "<leader>bl",
+                    "<cmd>FzfLua buffers<cr>",
+                    desc = "List buffers",
+                    icon = { icon = "󰓩", color = "green" },
+                    mode = "n",
+                },
+            }
+
             which_key.add(normal_config)
             which_key.add(find_config)
             which_key.add(git_config)
             which_key.add(lsp_config)
+            which_key.add(buffer_config)
         end,
     },
 }
