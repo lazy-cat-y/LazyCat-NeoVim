@@ -47,7 +47,8 @@ return {
 
             local M = {
                 formatting.clang_format.with(clang_format_config),
-                formatting.stylua
+                formatting.stylua,
+                formatting.black.with({ extra_args = { "--fast" } }),
             }
 
             null_ls.setup({

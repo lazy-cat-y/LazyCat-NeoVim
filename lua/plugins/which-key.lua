@@ -342,11 +342,53 @@ return {
                 },
             }
 
+            local trouble_config = {
+                { "<leader>t", group = "Trouble", icon = { icon = "󰋼", color = "orange" } },
+                {
+                    "<leader>tx",
+                    "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+                    desc = "Buffer Diagnostics (Trouble)",
+                    icon = { icon = "󰈔", color = "orange" },
+                    mode = "n",
+                },
+                {
+                    "<leader>tX",
+                    "<cmd>Trouble diagnostics toggle<cr>",
+                    desc = "Diagnostics (Trouble)",
+                    icon = { icon = "󰙅", color = "yellow" },
+                    mode = "n",
+                },
+                {
+                    "<leader>tl",
+                    "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+                    desc = "LSP Definitions / references / ... ",
+                    icon = { icon = "󰯲", color = "blue" },
+                    mode = "n",
+                },
+
+                {
+                    "<leader>tl",
+                    "<cmd>Trouble loclist toggle<cr>",
+                    desc = "Location List",
+                    icon = { icon = "󰓎", color = "blue" },
+                    mode = "n",
+                },
+
+                {
+                    "<leader>tq",
+                    "<cmd>Trouble qflist toggle<cr>",
+                    desc = "Quickfix List",
+                    icon = { icon = "󰁨", color = "red" },
+                    mode = "n",
+                },
+            }
+
             which_key.add(normal_config)
             which_key.add(find_config)
             which_key.add(git_config)
             which_key.add(lsp_config)
             which_key.add(buffer_config)
+            which_key.add(trouble_config)
         end,
     },
 }

@@ -43,8 +43,8 @@ return {
             vim.diagnostic.config({
                 underline = true,
                 update_in_insert = true,
-                virtual_text = true,
-                virtual_lines = false,
+                virtual_text = false,
+                virtual_lines = true,
                 float = {
                     focusable = false,
                     border = "rounded",
